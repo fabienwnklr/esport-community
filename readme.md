@@ -29,7 +29,7 @@ Jquery non souhaité pour garder des performances et coût énergétique optimau
 ## Installation 
 
 ```bash
-git clone git@gitlab.com:fabien.winkler/esport-community.git
+git clone git@github.com:fabienwnklr/esport-community.git
 npm install //on ne sait jamais
 npm start 
 ```
