@@ -1,0 +1,195 @@
+@import 'variable';
+@import 'mixins';
+
+.create-tournament-main {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 0 auto;
+
+    .first-title {
+        @include fontSize(22px);
+    }
+
+    .section-create {
+        border: 1px solid #333;
+        border-radius: 15px;
+        padding: 1% 2% 1%;
+        margin-bottom: 5%;
+        background-color: #fff;
+
+        .form-name-tournament {
+            margin-bottom: 2%;
+
+            .label-name-tournament {
+                position: absolute;
+                text-indent: -9999px;
+            }
+
+            .input-name-toornament {
+                border: none;
+                border-bottom: 1.5px solid black;
+                width: 50%;
+                height: 35px;
+
+                &:focus {
+                    outline: none;
+                    border-bottom: 1.5px solid $link-color;
+                }
+            }
+        }
+
+        .choose-game-container {
+            display: flex;
+            flex-wrap: wrap;
+            margin-bottom: 2%;
+
+            .choose-game {
+                width: 15%;
+                margin-right: 2%;
+                border: 4.5px solid transparent;
+
+                &:hover {
+                    border: 4.5px solid $link-color;
+                }
+
+                &:last-of-type {
+                    margin-right: 0;
+                }
+            }
+        }
+
+        .input-game-selected {
+            width: 98%;
+            padding: 5px 2px 5px;
+            border: none;
+            border-bottom: 1.5px solid black;
+
+            &:focus {
+                outline: none;
+                border-bottom: 1.5px solid $link-color;
+            }
+        }
+
+        .platforms-container {
+
+            text-align: center;
+            margin-top: 3%;
+            color: #fff;
+
+            .check-platform {
+                display: inline-block;
+
+                input {
+                    display: none;
+                }
+
+                label {
+                    @include fontSize(18px);
+                    padding: 0.5rem;
+                    background-color: lighten($default-color, 10%);
+                    border-radius: 3px;
+                    margin-right: 1rem;
+                }
+
+                input:checked+label {
+                    background-color: darken($link-color, 15%);
+                }
+            }
+        }
+
+        .container-date {
+            margin-top: 5%;
+
+            div {
+                display: inline-block;
+
+                input {
+                    border: none;
+                    border-bottom: 1px solid black;
+                }
+
+            }
+
+            .date {
+                margin-right: 5%;
+
+            }
+        }
+
+        .summarize-container {
+            h2 {
+                padding: 1rem;
+                @include fontSize(18px);
+                background-color: #ebe7e7;
+                margin-bottom: 0;
+            }
+        }
+
+        .create-button {
+            text-align: right;
+
+            button {
+                outline: none;
+                cursor: pointer;
+                @include fontSize(22px);
+                border: none;
+                border: 1.2px solid darken($validate, 10%);
+                border-radius: 10px;
+                padding: 0.5rem 1rem;
+                color: white;
+                background-color: $validate;
+
+                &:hover,
+                &:focus {
+                    background-color: darken($validate, 10%);
+                }
+            }
+        }
+
+        .summarize-container {
+            width: 50%;
+            margin: 0 auto;
+        }
+    }
+
+
+}
+
+
+@media only screen and (max-width: 670px) {
+    .create-tournament-main {
+        .section-create {
+            .form-create-tournament {
+                .form-name-tournament {
+                    .input-name-toornament {
+                        width: 100%;
+                    }
+                }
+
+                .choose-game-container {
+                    .choose-game {
+                        width: 32%;
+                        margin-bottom: 1%;
+
+                        &:nth-child(3n) {
+                            margin-right: 0;
+                        }
+                    }
+                }
+
+                .summarize-container {
+                    width: 80%;
+                }
+
+                .create-button {
+                    button {
+                        .creer {
+                            @include fontSize(16px);
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

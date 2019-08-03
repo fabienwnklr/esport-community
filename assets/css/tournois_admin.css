@@ -1,0 +1,51 @@
+.container-tournament {
+  margin-top: 8%;
+  font-size: 0; }
+  .container-tournament .global-display {
+    font-size: 18px;
+    font-size: 1.125rem;
+    background-color: #e0e0e0;
+    display: inline-block;
+    width: 23%;
+    text-align: center;
+    margin-right: 2%;
+    margin-bottom: 8%;
+    vertical-align: top;
+    position: relative; }
+    .container-tournament .global-display:nth-child(4n) {
+      margin-right: 0; }
+    .container-tournament .global-display .delete {
+      width: 22px;
+      position: absolute;
+      right: 0;
+      top: 0; }
+    .container-tournament .global-display a {
+      padding-top: 5rem;
+      padding-bottom: 5rem;
+      border: 3px solid transparent;
+      display: block;
+      height: 100%; }
+      .container-tournament .global-display a img {
+        width: 100%; }
+    .container-tournament .global-display a,
+    .container-tournament .global-display div {
+      color: #3e3e3e; }
+    .container-tournament .global-display a:hover {
+      text-decoration: none;
+      border: 3px solid #143347; }
+    .container-tournament .global-display svg {
+      width: 20%; }
+    .container-tournament .global-display .title {
+      padding-top: 1.5rem;
+      font-size: 18px;
+      font-size: 1.125rem;
+      color: #3e3e3e; }
+    .container-tournament .global-display .tournament {
+      padding: 0; }
+      .container-tournament .global-display .tournament div {
+        line-height: 1.4rem; }
+        .container-tournament .global-display .tournament div h3 {
+          font-size: 18px;
+          font-size: 1.125rem; }
+
+/*# sourceMappingURL=tournois_admin.css.map */

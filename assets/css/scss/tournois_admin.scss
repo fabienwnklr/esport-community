@@ -1,0 +1,77 @@
+@import 'variable';
+@import 'mixins';
+
+.container-tournament {
+    margin-top: 8%;
+    font-size: 0;
+
+    .global-display {
+        @include fontSize(18px);
+        background-color: #e0e0e0;
+        display: inline-block;
+        width: 23%;
+        text-align: center;
+        margin-right: 2%;
+        margin-bottom: 8%;
+        vertical-align: top;
+        position: relative;
+
+        &:nth-child(4n) {
+            margin-right: 0;
+        }
+
+        .delete {
+            width: 22px;
+            position: absolute;
+            right: 0;
+            top: 0;
+        }
+
+
+        a {
+            padding-top: 5rem;
+            padding-bottom: 5rem;
+            border: 3px solid transparent;
+            display: block;
+            height: 100%;
+
+            img {
+                width: 100%;
+            }
+        }
+
+        a,
+        div {
+            color: $text-color;
+        }
+
+        a:hover {
+            text-decoration: none;
+            border: 3px solid $link-hover;
+            // color: $link-hover;
+        }
+
+        svg {
+            width: 20%;
+        }
+
+        .title {
+            padding-top: 1.5rem;
+            @include fontSize(18px);
+            color: $text-color;
+        }
+
+        .tournament {
+            padding: 0;
+
+            div {
+                line-height: 1.4rem;
+                ;
+
+                h3 {
+                    @include fontSize(18px);
+                }
+            }
+        }
+    }
+}

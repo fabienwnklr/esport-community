@@ -1,0 +1,5 @@
+@import 'variable';
+@import 'mixins';
+.title-content-us {
+    @include fontSize(22px);
+}

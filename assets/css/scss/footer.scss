@@ -1,0 +1,36 @@
+@import'variable';
+@import'mixins';
+#footer {
+    font-size: 0;
+    background-color: $default-color;
+    .title-footer {
+        @include fontSize(18px);
+        margin-bottom: 15px;
+    }
+    a {
+        text-decoration: none;
+        svg {
+            padding: 5px;
+            width: 34px;
+            height: 34px;
+            fill: #000;
+            &.svg-facebook:hover {
+                fill: #fff;
+                background-color: #355392;
+            }
+            &.svg-twitter:hover {
+                fill: #fff;
+                background-color: #1da1f2;
+            }
+            &.svg-instagram:hover {
+                border-radius: 8px;
+                fill: #fff;
+                background: linear-gradient(#5852a2, #e91c54, #fdc45d);
+            }
+        }
+    }
+    .content-footer {
+        text-align: center;
+        padding: 5%;
+    }
+}

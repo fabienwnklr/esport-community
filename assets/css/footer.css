@@ -1,0 +1,29 @@
+#footer {
+  font-size: 0;
+  background-color: #d3ccae; }
+  #footer .title-footer {
+    font-size: 18px;
+    font-size: 1.125rem;
+    margin-bottom: 15px; }
+  #footer a {
+    text-decoration: none; }
+    #footer a svg {
+      padding: 5px;
+      width: 34px;
+      height: 34px;
+      fill: #000; }
+      #footer a svg.svg-facebook:hover {
+        fill: #fff;
+        background-color: #355392; }
+      #footer a svg.svg-twitter:hover {
+        fill: #fff;
+        background-color: #1da1f2; }
+      #footer a svg.svg-instagram:hover {
+        border-radius: 8px;
+        fill: #fff;
+        background: linear-gradient(#5852a2, #e91c54, #fdc45d); }
+  #footer .content-footer {
+    text-align: center;
+    padding: 5%; }
+
+/*# sourceMappingURL=footer.css.map */
