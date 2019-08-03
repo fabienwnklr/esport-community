@@ -40,7 +40,7 @@
                     <p>75008 PARIS</p>
                     <p>France</p>
                     <p>Email : email@example.com</p>
-                    <p>Tel. +33 12 56 11 51 84</p>
+                    <p>Tel. 06 12 56 11 51 84</p>
 
                 </div>
 
