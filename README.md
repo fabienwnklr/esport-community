@@ -1,2 +1,0 @@
-# esport-community
-esport-commnity
