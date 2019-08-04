@@ -34,6 +34,6 @@ npm install //on ne sait jamais
 npm start 
 ```
 
-Pour signaler un bug https://gitlab.com/fabien.winkler/esport-community/issues
+Pour signaler un bug https://github.com/fabienwnklr/esport-community/issues
 
-Demander une fusion de code : https://gitlab.com/fabien.winkler/esport-community/merge_requests (sur la branche `dev`)
+Demander une fusion de code : https://github.com/fabienwnklr/esport-community/pulls (sur la branche `dev`)
