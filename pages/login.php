@@ -32,7 +32,7 @@ function login($db)
             'label' => 'Vous êtes connecté.',
             'status' => 'success'
         ];
-        header('Location: ../index.php');
+        header('Location: accueil');
         die();
     else :
         $_SESSION['message'] = [
@@ -80,9 +80,9 @@ endif;
 
 
 <body class="text-center">
-    <form method="post" action="login.php" class="form-signin">
+    <form method="post" action="connexion" class="form-signin">
             <?= flash() ?>
-        <a href="http://localhost/php/esport-community/">
+        <a href="accueil">
             Retour au menu d'accueil
         </a>
         <h1 class="h3 mt-5 mb-3 font-weight-normal">Connexion</h1>

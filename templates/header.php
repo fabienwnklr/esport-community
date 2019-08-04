@@ -24,36 +24,36 @@
             </div>
 
         </a>
-        <a class="logo wrapper" href="http://localhost/php/esport-community/" title="Accueil">
+        <a class="logo wrapper" href="accueil" title="Accueil">
             <?php require_once('logo.php'); ?>
         </a>
         <nav class="main-menu wrapper">
             <ul class="menu-nav">
                 <li class="create-toornament">
-                    <a href="http://localhost/php/esport-community/pages/tournois.php" title="Mes tournois">
+                    <a href="tournois" title="Mes tournois">
                         Tournois
                     </a>
                 </li>
                 <li class="live">
-                    <a href="http://localhost/php/esport-community/pages/live.php" title="Live">
+                    <a href="live" title="Live">
                         Live
                     </a>
                 </li>
                 <li class="contact-us">
-                    <a href="http://localhost/php/esport-community/pages/contact-us.php" title="Nous contactez">
+                    <a href="contact" title="Nous contactez">
                         Nous contactez
                     </a>
                 </li>
             </ul>
             <ul id="menu-connect">
                 <li class="inscription">
-                    <a href="http://localhost/php/esport-community/pages/inscription.php" title="Inscription">
+                    <a href="inscription" title="Inscription">
                     <i class="fas fa-user-plus"></i>
                         Inscription
                     </a>
                 </li>
                 <li class="connexion">
-                    <a href="http://localhost/php/esport-community/pages/login.php" title="Connexion">
+                    <a href="connexion" title="Connexion">
                     <i class="fas fa-sign-in-alt"></i>
                         Connexion
                     </a>

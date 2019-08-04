@@ -1,0 +1,17 @@
+RewriteEngine On
+
+RewriteRule ^accueil$ index.php
+RewriteRule ^tournois$ pages/tournois.php
+RewriteRule ^live$ pages/live.php
+RewriteRule ^contact$ pages/contact-us.php
+RewriteRule ^inscription$ pages/inscription.php
+RewriteRule ^connexion$ pages/login.php
+RewriteRule ^logout$ pages/logout.php
+
+
+RewriteRule ^mes-tournois$ pages/tournois_admin.php
+RewriteRule ^parametres$ pages/param_admin.php
+RewriteRule ^creer-tournoi$ pages/creer-tournoi.php
+
+
+

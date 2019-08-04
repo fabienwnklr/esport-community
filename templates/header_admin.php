@@ -25,18 +25,18 @@
             </div>
 
         </a>
-        <a class="logo wrapper" href="http://localhost/php/esport-community/" title="Accueil">
+        <a class="logo wrapper" href="accueil" title="Accueil">
             <?php require_once('logo.php'); ?>
         </a>
         <nav class="main-menu wrapper">
             <ul class="menu-nav">
                 <li class="create-toornament">
-                    <a href="http://localhost/php/esport-community/pages/tournois.php" title="Tournois">
+                    <a href="tournois" title="Tournois">
                         Tournois
                     </a>
                 </li>
                 <li class="live">
-                    <a href="http://localhost/php/esport-community/pages/live.php" title="Live">
+                    <a href="live" title="Live">
                         Live
                     </a>
                 </li>
@@ -55,25 +55,25 @@
                     </a>
                     <ul class="sub-menu">
                         <li>
-                            <a href="http://localhost/php/esport-community/pages/param_admin.php">
+                            <a href="parametres">
                                 <i class="fas fa-user-cog"></i>
                                 Paramètres
                             </a>
                         </li>
                         <li>
-                            <a href="http://localhost/php/esport-community/pages/creer-tournoi.php">
+                            <a href="creer-tournoi">
                                 <i class="fas fa-plus-circle"></i>
                                 Créer un tournoi
                             </a>
                         </li>
                         <li>
-                            <a href="http://localhost/php/esport-community/pages/tournois_admin.php">
+                            <a href="mes-tournois">
                                 <i class="fas fa-chess"></i>
                                 Mes tournois
                             </a>
                         </li>
                         <li>
-                            <a href="http://localhost/php/esport-community/pages/logout.php">
+                            <a href="logout">
                                 <i class="fas fa-sign-out-alt"></i>
                                 Déconnexion
                             </a>
