@@ -8,5 +8,5 @@
 		'status' => 'success'
 	];
 
-	header('Location: login.php');
+	header('Location: connexion');
 	die();
