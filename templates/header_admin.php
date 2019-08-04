@@ -41,7 +41,7 @@
                     </a>
                 </li>
                 <li class="contact-us">
-                    <a href="http://localhost/php/esport-community/pages/contact-us.php" title="Nous contactez">
+                    <a href="contact" title="Nous contactez">
                         Nous contactez
                     </a>
                 </li>
