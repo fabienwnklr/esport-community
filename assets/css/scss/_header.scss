@@ -62,18 +62,21 @@
         float: right;
         position: relative;
         width: 17%;
-        padding: 0 10px 0 10px;
         text-align: center;
+
         &:hover {
             .sub-menu {
                 display: block;
             }
 
         }
+
         i {
             margin-right: 5px;
         }
+
         li {
+            padding: 10px 0;
             margin-left: 10px;
             text-align: left;
             display: inline-block;
@@ -96,7 +99,7 @@
                 display: block;
             }
         }
-        
+
     }
 }
 
@@ -205,6 +208,7 @@ $menu-width: 250px;
     }
 
     .main-menu {
+        padding-top: 0;
         position: absolute;
         left: 0;
         top: 0;
@@ -213,6 +217,10 @@ $menu-width: 250px;
         width: $menu-width;
         z-index: 1;
         transform: translateX($menu-width * -1);
+
+        li {
+            padding: 15px 0;
+        }
 
         .menu-nav {
             display: block;
@@ -227,7 +235,8 @@ $menu-width: 250px;
             }
         }
 
-        #menu-connected {
+        #menu-connected,
+        #menu-connect {
             display: block;
             float: none;
             width: 100%;
@@ -236,6 +245,7 @@ $menu-width: 250px;
             &:hover {
                 .sub-menu {
                     display: block;
+
                     li {
                         @include fontSize(16px);
                         text-align: left;
@@ -245,13 +255,14 @@ $menu-width: 250px;
             }
 
             li {
-                
                 text-align: center;
                 display: block;
+                padding-right: 0;
+                border-bottom: 1px solid $default-color;
+            }
 
-                .inscription {
-                    padding-right: 20px;
-                }
+            .inscription {
+                padding-right: 0px;
             }
         }
     }

@@ -66,7 +66,7 @@
 <script src="https://getbootstrap.com/docs/4.3/examples/checkout/form-validation.js"></script>
 <script src="http://localhost/php/esport-community/assets/js/app.js"></script>
 <script src="http://localhost/php/esport-community/assets/js/home.js"></script>
-<script src="http://localhost/php/esport-community/assets/js/create-tournament.js"></script>
+<script src="http://localhost/php/esport-community/assets/js/tournois.js"></script>
 </body>
 
 

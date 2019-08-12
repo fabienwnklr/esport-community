@@ -220,13 +220,13 @@ img {
     float: right;
     position: relative;
     width: 17%;
-    padding: 0 10px 0 10px;
     text-align: center; }
     .main-menu #menu-connected:hover .sub-menu {
       display: block; }
     .main-menu #menu-connected i {
       margin-right: 5px; }
     .main-menu #menu-connected li {
+      padding: 10px 0;
       margin-left: 10px;
       text-align: left;
       display: inline-block; }
@@ -310,6 +310,7 @@ img {
       outline: none; }
 
   .main-menu {
+    padding-top: 0;
     position: absolute;
     left: 0;
     top: 0;
@@ -318,6 +319,8 @@ img {
     width: 250px;
     z-index: 1;
     transform: translateX(-250px); }
+    .main-menu li {
+      padding: 15px 0; }
     .main-menu .menu-nav {
       display: block;
       position: relative; }
@@ -326,22 +329,29 @@ img {
         display: block;
         text-align: center;
         border-bottom: 1px solid #d3ccae; }
-    .main-menu #menu-connected {
+    .main-menu #menu-connected,
+    .main-menu #menu-connect {
       display: block;
       float: none;
       width: 100%;
       padding: 0 10px 0 10px; }
-      .main-menu #menu-connected:hover .sub-menu {
+      .main-menu #menu-connected:hover .sub-menu,
+      .main-menu #menu-connect:hover .sub-menu {
         display: block; }
-        .main-menu #menu-connected:hover .sub-menu li {
+        .main-menu #menu-connected:hover .sub-menu li,
+        .main-menu #menu-connect:hover .sub-menu li {
           font-size: 16px;
           font-size: 1rem;
           text-align: left; }
-      .main-menu #menu-connected li {
+      .main-menu #menu-connected li,
+      .main-menu #menu-connect li {
         text-align: center;
-        display: block; }
-        .main-menu #menu-connected li .inscription {
-          padding-right: 20px; } }
+        display: block;
+        padding-right: 0;
+        border-bottom: 1px solid #d3ccae; }
+      .main-menu #menu-connected .inscription,
+      .main-menu #menu-connect .inscription {
+        padding-right: 0px; } }
 .with-sidebar .site-pusher {
   transform: translateX(250px); }
 

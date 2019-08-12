@@ -2,7 +2,7 @@
 // fonction qui fait appel a une requête ajax pour afficher les différents tournois d'un même jeux
 var displayTournamentGame = function (game) {
     $.ajax({
-        url: 'http://localhost/php/esport-community/accueil/xhr/xhr_home.php',
+        url: 'http://localhost/php/esport-community/xhr/xhr_home.php',
         method: 'POST',
         data: 'get=selectGame&name=' + game,
         success: function (result) {
@@ -23,7 +23,7 @@ var displayTournamentGame = function (game) {
 
                     content += "<div class='tournoi'>"
                     content += "<a href='#'>";
-                    content += "<img src='http://localhost/php/esport-community/accueil/assets/img/icon-" + nameForImg + ".png' alt=" + game + ">";
+                    content += "<img src='http://localhost/php/esport-community/assets/img/icon-" + nameForImg + ".png' alt=" + game + ">";
                     content += "<div class='details_tournoi'>";
                     content += "<h4 class='game_name'>" + title + "</h3>";
                     content += "<p>" + game + "</p>";
@@ -58,32 +58,4 @@ var displayTournamentGame = function (game) {
             console.error(e)
         }
     });
-}
-
-// fonction qui fait appel a une requête ajax pour supprimer un tournoi
-var deleteTournament = function (id) {
-    confirm('Êtes vous sur de vouloir supprimer définitivement ce tournoi ?')
-
-    if (confirm('Êtes vous sur de vouloir supprimer définitivement ce tournoi ?')) {
-        $.ajax({
-            url: 'http://localhost/php/esport-community/accueil/xhr/xhr_home.php',
-            method: 'POST',
-            data: 'get=removeTournament&id=' + id,
-            success: function (r) {
-                document.location.reload();
-                var content = "<div class='alert alert-succes alert-dismissible fade show' role='alert'>";
-                content += "Votre tournoi à bien été supprimer.";
-                content += "<button type='button' class='close' data-dismiss='alert' aria-label='Close'>";
-                content += "<span aria-hidden='true'>&times;</span>";
-                content += "</button>";
-                content += "</div>";
-                $('#header').after(content)
-
-
-            },
-            error: function (e) {
-                console.error(e)
-            }
-        });
-    }
 }
