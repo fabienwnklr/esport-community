@@ -23,7 +23,7 @@ $platform = platformSelect();
         ?>
         <div class="tournoi">
             <a href="#">
-                <img src="http://winkler.akoatic.ovh/assets/img/icon-<?= $game; ?>.png" alt="<?= $key['game']; ?>">
+                <img src="http://localhost/php/esport-community/assets/img/icon-<?= $game; ?>.png" alt="<?= $key['game']; ?>">
                 <div class="details_tournoi">
                     <h4 class="game_name"><?= $key['name']; ?></h3>
                         <p><?= $key['game']; ?></p>

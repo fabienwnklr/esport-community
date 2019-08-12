@@ -57,7 +57,7 @@ if (isset($_SESSION['auth'])) {
                     </article>
                 <?php endforeach; ?>
                 <article class="game">
-                    <a href="http://winkler.akoatic.ovh/accueil/pages/tournois.php">
+                    <a href="http://localhost/php/esport-community/accueil/pages/tournois.php">
                         <img src="assets/img/all.jpg" alt="Voir tout">
                         <div class="hover"></div>
                     </a>

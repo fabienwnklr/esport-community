@@ -7,7 +7,7 @@ $tournaments = displayTournament('name ASC');
 
     <div class="container-tournament wrapper">
         <div class="global-display">
-            <a href="http://winkler.akoatic.ovh/pages/creer-tournoi.php">
+            <a href="http://localhost/php/esport-community/pages/creer-tournoi.php">
                 <svg version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 50 50" style="enable-background:new 0 0 50 50;" xml:space="preserve">
                     <circle style="fill:#43B05C;" cx="25" cy="25" r="25" />
                     <line style="fill:none;stroke:#FFFFFF;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;" x1="25" y1="13" x2="25" y2="38" />
@@ -29,7 +29,7 @@ $tournaments = displayTournament('name ASC');
             <div class="global-display">
                 <?php include($_SERVER['DOCUMENT_ROOT'] . '/php/esport-community/assets/svg/cancel.svg') ?>
                 <a class="tournament" href="#">
-                    <img src="http://winkler.akoatic.ovh/assets/img/<?= $game; ?>-small.jpg" alt="<?= $key['game']; ?>">
+                    <img src="http://localhost/php/esport-community/assets/img/<?= $game; ?>-small.jpg" alt="<?= $key['game']; ?>">
                     <div>
                         <p><?= $key['game']; ?></p>
                         <p>Date : <?= $date ?></p>
@@ -49,7 +49,7 @@ $tournaments = displayTournament('name ASC');
         'status' => 'info'
     ];
     require_once('../templates/header.php'); ?>
-    <?= flash('http://winkler.akoatic.ovh/pages/inscription.php', 'ici'); ?>
+    <?= flash('http://localhost/php/esport-community/pages/inscription.php', 'ici'); ?>
     <div class="container-tournament wrapper">
         <?php foreach ($tournaments as $key) { ?>
             <?php
@@ -59,7 +59,7 @@ $tournaments = displayTournament('name ASC');
             ?>
             <div class="global-display">
                 <a class="tournament" href="">
-                    <img src="http://winkler.akoatic.ovh/assets/img/<?= $game; ?>-small.jpg" alt="<?= $key['game']; ?>">
+                    <img src="http://localhost/php/esport-community/assets/img/<?= $game; ?>-small.jpg" alt="<?= $key['game']; ?>">
                     <div>
                         <p><?= $key['game']; ?></p>
                         <p>Date : <?= $date ?></p>
