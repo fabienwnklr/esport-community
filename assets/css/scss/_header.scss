@@ -21,9 +21,10 @@
 
 .main-menu {
     @include fontSize(22px);
+    padding-top: 25px;
     // display: inline-block;
     // width: 78%;
-    line-height: 86px;
+    // line-height: 74px;
 
     .menu-nav {
         display: inline-block;

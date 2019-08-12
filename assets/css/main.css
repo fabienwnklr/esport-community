@@ -199,7 +199,7 @@ img {
 .main-menu {
   font-size: 22px;
   font-size: 1.375rem;
-  line-height: 86px; }
+  padding-top: 25px; }
   .main-menu .menu-nav {
     display: inline-block; }
     .main-menu .menu-nav li {
