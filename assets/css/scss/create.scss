@@ -27,15 +27,8 @@
             }
 
             .input-name-toornament {
-                border: none;
-                border-bottom: 1.5px solid black;
                 width: 50%;
                 height: 35px;
-
-                &:focus {
-                    outline: none;
-                    border-bottom: 1.5px solid $link-color;
-                }
             }
         }
 
@@ -62,20 +55,13 @@
         .input-game-selected {
             width: 98%;
             padding: 5px 2px 5px;
-            border: none;
-            border-bottom: 1.5px solid black;
-
-            &:focus {
-                outline: none;
-                border-bottom: 1.5px solid $link-color;
-            }
         }
 
         .platforms-container {
 
             text-align: center;
             margin-top: 3%;
-            color: #fff;
+            color: $text-color;
 
             .check-platform {
                 display: inline-block;
@@ -94,6 +80,7 @@
 
                 input:checked+label {
                     background-color: darken($link-color, 15%);
+                    color: lighten($text-color, 100%);
                 }
             }
         }
@@ -103,17 +90,10 @@
 
             div {
                 display: inline-block;
-
-                input {
-                    border: none;
-                    border-bottom: 1px solid black;
-                }
-
             }
 
             .date {
                 margin-right: 5%;
-
             }
         }
 
@@ -134,15 +114,15 @@
                 cursor: pointer;
                 @include fontSize(22px);
                 border: none;
-                border: 1.2px solid darken($validate, 10%);
+                border: 1.2px solid darken(#4ca749, 10%);
                 border-radius: 10px;
                 padding: 0.5rem 1rem;
                 color: white;
-                background-color: $validate;
+                background-color: #4ca749;
 
                 &:hover,
                 &:focus {
-                    background-color: darken($validate, 10%);
+                    background-color: darken(#4ca749, 10%);
                 }
             }
         }

@@ -15,7 +15,7 @@
 
         .validate {
             button {
-                background-color: #d3ccae;
+                background-color: $bg-input;
                 border: none;
                 cursor: pointer;
                 display: block;
@@ -24,14 +24,19 @@
                 width: 40px;
                 height: 40px;
 
+                &:focus {
+                    outline: none;
+                }
+
                 &:hover {
+                    background-color: $hover-button;
                     i {
                         color: $link-hover;
                     }
                 }
 
                 i {
-                    color: #fff;
+                    color: #333;
 
                 }
             }

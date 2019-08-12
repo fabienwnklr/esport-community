@@ -28,37 +28,45 @@ body {
     select {
         cursor: pointer;
         @include fontSize(16px);
-        color: white;
-        background-color: $default-color;
+        // color: white;
+        background-color: $bg-input;
         height: 40px;
-        outline: none;
+        border: none;
+        border: 1px solid $border-input;
+        border-radius: $radius-input;
         padding-left: 0.5rem;
         margin-right: 1%;
-        // overflow: hidden;
 
+        &:focus,
         &:hover {
-           
+            outline: none;
+            border-color: none;
         }
     }
 
     input {
         border: none;
-        background-color: $default-color;
+        background-color: $bg-input;
         height: 40px;
-        color: $link-hover;
         padding-left: 0.5rem;
         margin-right: 1%;
         border-bottom: 1.5px solid transparent;
-        transition: .4s ease border-bottom;
+        transition: .3s ease border-bottom;
+
         &:focus {
-            border-color: $link-hover;
+            border: none;
             outline: none;
-        }
-        &::placeholder {
-            color: white;
+            border-bottom: 1.5px solid $focus-input;
         }
     }
+}
 
+input[type=date],
+input[type=time] {
+    &::-webkit-inner-spin-button,
+    &::-webkit-outer-spin-button {
+        display: none;
+    }
 }
 
 a {
