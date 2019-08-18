@@ -10,7 +10,7 @@ les joueurs eux mêmes. Afin de créer une communauté et de permettre une lég�
 
 ## Lien direct vers le site
 
-https://winkler.akoatic.ovh/esport-community
+https://winkler.akoatic.ovh/
 
 ## Motivation
 

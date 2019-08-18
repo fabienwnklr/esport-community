@@ -48,3 +48,8 @@ Fin de la page créer tournoi + responsif
 Création pages intermédiaire a la création de tournoi
 // tournois.php
 qui réuni mes tournois créer et me permet d'en créer si besoin
+
+##Mercredi 24 Juillet##
+
+Style + couleur améliorer, résponsive de toute les pages
+Ajout icon + côté admin terminer
