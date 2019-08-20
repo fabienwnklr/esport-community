@@ -49,7 +49,16 @@ Création pages intermédiaire a la création de tournoi
 // tournois.php
 qui réuni mes tournois créer et me permet d'en créer si besoin
 
-##Mercredi 24 Juillet##
+##Mercredi 24 Juillet 2019##
 
 Style + couleur améliorer, résponsive de toute les pages
 Ajout icon + côté admin terminer
+
+##Samedi 27 Juillet 2019##
+
+Mise en place htaccess pour edit le nom de la page dans l'url
+
+##Mardi 20 août 2019##
+
+Edit de la page error 404
+Condition pour pas accéder a la page "créer un tournoi" si non connecter

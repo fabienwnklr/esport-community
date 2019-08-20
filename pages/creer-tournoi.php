@@ -1,14 +1,9 @@
-<?php include('../includes/functions.php');?>
+<?php include('../includes/functions.php'); ?>
 <?php if (isset($_SESSION['auth'])) {
-    require_once('../templates/header_admin.php'); 
-} else {
-    require_once('../templates/header.php'); 
-} ?>
-
-<?php 
-checkFormCreateTournament();
-echo flash()
- ?>
+    include('../templates/header_admin.php');
+    checkFormCreateTournament();
+    echo flash()
+    ?>
 <main class="create-tournament-main">
 
     <!-- DEBUT TITRE PAGE -->
@@ -30,9 +25,9 @@ echo flash()
             <div class="choose-game-container">
                 <?php $game = gameSelect('ASC', 6); ?>
                 <?php foreach ($game as $value) : ?>
-                    <article class="choose-game">
-                        <img id="game" onclick="returnSelectedGame(this)" src="<?= $value['image']; ?>" alt="<?= $value['name']; ?>">
-                    </article>
+                <article class="choose-game">
+                    <img id="game" onclick="returnSelectedGame(this)" src="<?= $value['image']; ?>" alt="<?= $value['name']; ?>">
+                </article>
                 <?php endforeach; ?>
             </div>
             <!-- FIN CHOIX JEUX PAR IMG -->
@@ -43,14 +38,14 @@ echo flash()
             <input type="search" id="inputToReturnValue" name="game_selected" class="input-game-selected" placeholder="Choisit ton jeu..." required>
 
             <!-- DEBUT CHECKBOX SELECT PLATFORM -->
-            <div  class="platforms-container">
+            <div class="platforms-container">
                 <?php foreach ($platform as $value) : ?>
-                    <div class="check-platform">
-                        <input type="checkbox" id="platform_checkbox_<?= $value['name']; ?>" name="platform[]" value="<?= $value['name']; ?>" required>
-                        <label for="platform_checkbox_<?= $value['name']; ?>">
-                            <?= $value['name']; ?>
-                        </label>
-                    </div>
+                <div class="check-platform">
+                    <input type="checkbox" id="platform_checkbox_<?= $value['name']; ?>" name="platform[]" value="<?= $value['name']; ?>" required>
+                    <label for="platform_checkbox_<?= $value['name']; ?>">
+                        <?= $value['name']; ?>
+                    </label>
+                </div>
                 <?php endforeach; ?>
             </div>
             <!-- FIN CHECKBOX SELECT PLATFORM -->
@@ -109,6 +104,7 @@ echo flash()
     </section>
     <!-- FIN CONTENT CREER TOURNOI -->
 </main>
-
-
-<?php require_once('../templates/footer.php'); ?>
+<?php include('../templates/footer.php'); ?>
+<?php } else {
+    include('../error/404.html');
+} ?>
