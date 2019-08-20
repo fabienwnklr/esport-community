@@ -5,7 +5,7 @@ if (isset($_SESSION['auth'])) {
 } else {
     require_once('templates/header.php'); 
 }
-debug($_SERVER);
+// debug($_SERVER);
 $url = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'];
  ?>
 

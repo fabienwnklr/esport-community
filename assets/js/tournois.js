@@ -20,7 +20,10 @@ $('input[type="checkbox"]:checked', '#platform').click().each(function () {
 })
 
 $('#date').change(function () {
-    $('#preview_date').html($(this).val());
+    var dateUS = $(this).val();
+        dateFR = dateUS.split('-');
+        date = dateFR[2] + '/'+ dateFR[1]+'/' + dateFR[0]
+    $('#preview_date').html(date);
 });
 
 $('#heure').change(function () {
