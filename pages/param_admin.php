@@ -6,63 +6,63 @@
 } ?>
 
 <?php
+$idUser = $_SESSION['auth']['id'];
 checkForm();
 echo flash();
+$dataUser = userData($idUser);
+debug($dataUser);
 ?>
 
-<div class="container mt-5">
-    <div class="text-center">
-        <h2>Vos informations.</h2>
-    </div>
-
-</div>
 <div class="container">
-    <form method="post" action="" class="needs-validation" novalidate>
-        <div class="row">
-            <div class="col-md-6 mb-3">
-                <label for="first-name">Nom</label>
-                <input type="text" class="form-control" id="first-name" name="first-name" required>
-                <div class="invalid-feedback">
-                    Un nom est requis.
+    <ul class="nav nav-tabs" id="myTab" role="tablist">
+        <li class="nav-item">
+            <a class="nav-link active" id="infos-tab" data-toggle="tab" href="#infos" role="tab" aria-controls="infos" aria-selected="true">Informations</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="avatar-tab" data-toggle="tab" href="#avatar" role="tab" aria-controls="avatar" aria-selected="false">Avatar</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="password-tab" data-toggle="tab" href="#password" role="tab" aria-controls="password" aria-selected="false">Mot de passe</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" id="deleteAccount-tab" data-toggle="tab" href="#deleteAccount" role="tab" aria-controls="deleteAccount" aria-selected="false">Supprimer le compte</a>
+        </li>
+    </ul>
+    <div class="tab-content" id="myTabContent" style="height=60vh">
+        <div class="tab-pane fade show active" id="infos" role="tabpanel" aria-labelledby="infos-tab">
+            <form class="mt-3 container">
+                <div class="form-group">
+                    <label for="name">Nom</label>
+                    <input type="text" class="form-control" id="name">
                 </div>
-            </div>
-            <div class="col-md-6 mb-3">
-                <label for="last-name">Prénom</label>
-                <input type="text" class="form-control" id="last-name" name="last-name" required>
-                <div class="invalid-feedback">
-                    Un prénom est requis.
+                <div class="form-group">
+                    <label for="firstname">Prénom</label>
+                    <input type="text" class="form-control" id="firstname">
                 </div>
-            </div>
+                <div class="form-group">
+                    <label for="email">Email</label>
+                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                </div>
+                <div class="form-group">
+                    <label for="ville">Ville</label>
+                    <input type="ville" class="form-control" id="ville" aria-describedby="villeHelp">
+                </div>
+                <div class="form-group">
+                    <label for="pays">Pays</label>
+                    <input type="pays" class="form-control" id="pays" aria-describedby="paysHelp">
+                </div>
+            </form>
         </div>
-        <div class="mb-3">
-            <label for="email">Adresse mail</label>
-            <input type="email" class="form-control" id="email" name="email" placeholder="you@example.com" required>
-            <div class="invalid-feedback">
-                Merci de renseigner une adresse mail valide.
-            </div>
+        <div class="tab-pane fade" id="avatar" role="tabpanel" aria-labelledby="avatar-tab">
+
         </div>
-        <div class="mb-3">
-            <label for="password">Mot de passe</label>
-            <input type="password"  name="password" class="form-control" id="password" required>
-            <small class="">Votre mot de passe doit contenir au minimum 8 caractères, 1 majuscule, 1 nombre, et un caractère spécial.</small>
-            <div class="invalid-feedback">
-                Merci de renseigner le champ.
-            </div>
+        <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
+
         </div>
-        <div class="row">
-            <div class="col-md-12 mb-3">
-                <label for="country">Pays</label>
-                <input type="text" class="form-control" id="country" >
-            </div>
+        <div class="tab-pane fade" id="deleteAccount" role="tabpanel" aria-labelledby="deleteAccount-tab">
+
         </div>
-        <div class="mb-3">
-            <label for="address">Adresse</label>
-            <input type="text" class="form-control" id="address" >
-        </div>
-        <hr class="mb-4">
-        <button class="btn btn-primary mb-5 btn-lg btn-block" type="submit">Enregistrer</button>
-    </form>
-</div>
+    </div>
 </div>
 
 <?php require_once('../templates/footer.php'); ?>

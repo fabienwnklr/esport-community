@@ -239,3 +239,17 @@ function deleteTournament(int $id) {
     $results = $request->execute();
     return $results;
 }
+
+/**
+ * function for recup informations users
+ *
+ * @param integer $id
+ * @return void
+ */
+function userData(int $id){
+    global $db;
+    $sql     = "SELECT * FROM users WHERE id='$id';";
+    $request = $db->query($sql);
+    $results = $request->fetchAll();
+    return $results;
+}

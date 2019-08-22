@@ -29,7 +29,7 @@ function login($db)
             'lastname'  => $result['lastname']
         ];
         $_SESSION['message'] = [
-            'label' => 'Vous êtes connecté.',
+            'label' => 'Bienvenue ' . ucfirst($_SESSION['auth']['firstname']) . '',
             'status' => 'success'
         ];
         header('Location: accueil');
