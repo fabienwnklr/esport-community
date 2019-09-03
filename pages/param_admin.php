@@ -1,15 +1,18 @@
-<?php include('../includes/functions.php'); ?>
+<?php include('../includes/functions.php');
+$idUser = $_SESSION['auth']['id'];
+deleteUser($idUser);
+?>
 <?php if (isset($_SESSION['auth'])) {
     require_once('../templates/header_admin.php');
 } else {
     require_once('../templates/header.php');
 } ?>
 
-<?php
-$idUser = $_SESSION['auth']['id'];
 
-deleteUser($idUser);
+<?php
 editPassword($idUser);
+editUserInfos($idUser);
+editAvatar($idUser);
 $dataUser = userData($idUser);
 echo flash();
 ?>
@@ -31,45 +34,55 @@ echo flash();
     </ul>
     <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="infos" role="tabpanel" aria-labelledby="infos-tab">
-            <form for="infos" class="mt-3 container">
+            <form for="infos" method="post" class="mt-3 container">
                 <h5>Mes informations</h5>
                 <div class="form-group">
-                    <label for="name">Nom</label>
-                    <input type="text" class="form-control" id="name" value="<?= ucfirst($dataUser[0]['lastname']) ?>">
+                    <label for="edit_lastname">Nom*</label>
+                    <input type="text" class="form-control" id="edit_lastname" name="edit_lastname" value="<?= ucfirst($dataUser[0]['lastname']) ?>">
                 </div>
                 <div class="form-group">
-                    <label for="firstname">Prénom</label>
-                    <input type="text" class="form-control" id="firstname" value="<?= ucfirst($dataUser[0]['firstname']) ?>">
+                    <label for="edit_firstname">Prénom*</label>
+                    <input type="text" class="form-control" id="edit_firstname" name="edit_firstname" value="<?= ucfirst($dataUser[0]['firstname']) ?>">
                 </div>
                 <div class="form-group">
-                    <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" value="<?= $dataUser[0]['email'] ?>">
+                    <label for="edit_email">Email*</label>
+                    <input type="email" class="form-control" id="edit_email" name="edit_email" value="<?= $dataUser[0]['email'] ?>">
                 </div>
                 <div class="form-group">
-                    <label for="ville">Ville</label>
-                    <input type="ville" class="form-control" id="ville">
+                    <label for="edit_ville">Ville </label>
+                    <input type="text" class="form-control" id="edit_ville" name="edit_ville">
                 </div>
                 <div class="form-group">
-                    <label for="pays">Pays</label>
-                    <input type="pays" class="form-control" id="pays">
+                    <label for="edit_pays">Pays</label>
+                    <input type="text" class="form-control" id="edit_pays" name="edit_pays">
                 </div>
                 <button type="submit" id="infos" class="btn btn-success">Valider modification(s)</button>
             </form>
         </div>
         <div class="tab-pane fade" id="avatar" role="tabpanel" aria-labelledby="avatar-tab">
-            <form for="editAvatar" method="post">
+            <form for="editAvatar" method="post" enctype="multipart/form-data">
                 <div class="mt-4 mb-3">
                     <h5>Ajouter/Modifier votre avatar</h5>
                 </div>
+                <?php if (!empty($avatar[0]['avatar'])) { ?>
+                    <div class="text-center mt-4 mb-4">
+                        <img class="rounded-circle w-25" src="assets/avatar_<?= $_SESSION['auth']['id'] . '/' . $avatar[0]['avatar']; ?>" alt="<?= $avatar[0]['avatar']; ?>">
+                    </div>
+                <?php } else { ?>
+                    <div class="text-center mt-4 mb-4">
+                        <img class="rounded-circle w-25" src="assets/avatar_default/avatar.jpg" alt="avatar">
+                    </div>
+                <?php } ?>
                 <div class="input-group">
                     <div class="custom-file">
                         <label class="custom-file-label" for="avatar">Choisir un fichier ...</label>
-                        <input type="file" class="custom-file-input" id="avatar" aria-describedby="avatar">
+                        <input type="file" name="avatar" class="custom-file-input" id="avatar" aria-describedby="avatar">
                     </div>
                     <div class="input-group-append">
                         <button class="btn btn-primary" type="submit" id="editAvatar">Enregistrer</button>
                     </div>
                 </div>
+                <small>Taille maximum : 800 x 800</small>
             </form>
         </div>
         <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
@@ -108,3 +121,14 @@ echo flash();
 </div>
 
 <?php require_once('../templates/footer.php'); ?>
+
+<script>
+    $('a[data-toggle="tab"]').on('shown.bs.tab', function(e) {
+        localStorage.setItem('activeTab', $(e.target).attr('href'));
+    });
+
+    var activeTab = localStorage.getItem('activeTab');
+    if (activeTab) {
+        $('.nav-tabs a[href="' + activeTab + '"]').tab('show');
+    }
+</script>

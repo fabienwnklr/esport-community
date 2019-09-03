@@ -64,6 +64,12 @@
         width: 17%;
         text-align: center;
 
+        .avatar {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
         &:hover {
             .sub-menu {
                 display: block;
@@ -241,6 +247,11 @@ $menu-width: 250px;
             float: none;
             width: 100%;
             padding: 0 10px 0 10px;
+
+            .avatar {
+                width: 60px;
+                height: 60px;;
+            }
 
             &:hover {
                 .sub-menu {

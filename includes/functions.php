@@ -3,6 +3,8 @@ session_start();
 require_once('database.php');
 require_once($_SERVER['DOCUMENT_ROOT'] . '/php/esport-community/Class/Validate.php');
 
+// ? Start init functions
+
 /**
  * Debug var
  * 
@@ -137,6 +139,45 @@ function inscription()
     endif;
 }
 
+
+/**
+ * function displayTournament
+ * for display all tournament
+ *
+ * @param string $order { default is 'id DESC'}
+ * @param boolean $nbElement { default is false }
+ * @return void
+ */
+function displayTournament($order = "id ASC", $nbElement = false)
+{
+    global $db;
+    $limit   = (is_int($nbElement)) ? 'LIMIT ' . $nbElement : '';
+    $sql     = "SELECT * FROM tournaments ORDER BY $order $limit";
+    $request = $db->query($sql);
+    $results = $request->fetchAll();
+    return $results;
+}
+
+/**
+ * function displayGameTournament
+ * for display all tournament where name = name
+ *
+ * @param string $name { name game to display }
+ * @return void
+ */
+function displayGameTournament(string $name)
+{
+    global $db;
+    $sql     = "SELECT * FROM tournaments WHERE game='$name';";
+    $request = $db->query($sql);
+    $results = $request->fetchAll();
+    return $results;
+}
+
+// ? End init functions
+
+// ! Start Fonctions admin 
+
 /**
  * function checkFormTournament
  * form checking all input complete
@@ -193,40 +234,6 @@ function createTournament()
 }
 
 /**
- * function displayTournament
- * for display all tournament
- *
- * @param string $order { default is 'id DESC'}
- * @param boolean $nbElement { default is false }
- * @return void
- */
-function displayTournament($order = "id ASC", $nbElement = false)
-{
-    global $db;
-    $limit   = (is_int($nbElement)) ? 'LIMIT ' . $nbElement : '';
-    $sql     = "SELECT * FROM tournaments ORDER BY $order $limit";
-    $request = $db->query($sql);
-    $results = $request->fetchAll();
-    return $results;
-}
-/**
- * function displayGameTournament
- * for display all tournament where name = name
- *
- * @param string $order { default is 'id DESC'}
- * @param boolean $nbElement { default is false }
- * @return void
- */
-function displayGameTournament(string $name)
-{
-    global $db;
-    $sql     = "SELECT * FROM tournaments WHERE game='$name';";
-    $request = $db->query($sql);
-    $results = $request->fetchAll();
-    return $results;
-};
-
-/**
  * function deleteTournament
  *  for delete tournament selected
  * @param integer $id
@@ -238,6 +245,36 @@ function deleteTournament(int $id)
     $sql     = "DELETE FROM tournaments WHERE id=$id;";
     $request = $db->prepare($sql);
     $request->execute();
+}
+
+/**
+ * function for recup user avatar
+ *
+ * @param integer $id
+ * @return void
+ */
+function userAvatar(int $id)
+{
+    global $db;
+    $sql     = "SELECT avatar FROM users WHERE id='$id';";
+    $request = $db->query($sql);
+    $results = $request->fetchAll();
+    return $results;
+}
+
+/**
+ * function for remove user avatar
+ *
+ * @param integer $id
+ * @return void
+ */
+function removeAvatar(int $id)
+{
+    global $db;
+    $sql     = "UPDATE FROM users SET avatar='' WHERE id='$id';";
+    $request = $db->query($sql);
+    $results = $request->fetchAll();
+    return $results;
 }
 
 /**
@@ -255,23 +292,134 @@ function userData(int $id)
     return $results;
 }
 
-function editAvatar(int $id)
+/**
+ * function editing user infos
+ *
+ * @param integer $id
+ * @return void
+ */
+function editUserInfos(int $id)
+{
+    global $db;
+    if (isset($_POST['edit_lastname']) && isset($_POST['edit_firstname']) && isset($_POST['edit_email'])) {
+        if (!empty($_POST['edit_lastname']) && !empty($_POST['edit_firstname']) && !empty($_POST['edit_email'])) {
+            $newLastName = $_POST['edit_lastname'];
+            $newFirstName = $_POST['edit_firstname'];
+            $newEmail = $_POST['edit_email'];
+
+            $_SESSION['message'] = [
+                'label' => 'Vos informations ont bien été modifier',
+                'status' => 'success'
+            ];
+
+            $sql     = "UPDATE users SET lastname='$newLastName', firstname='$newFirstName', email='$newEmail' WHERE id='$id';";
+            $request = $db->prepare($sql);
+            $results = $request->execute();
+            return $results;
+        } else {
+            $_SESSION['message'] = [
+                'label' => 'Veuillez remplir les champs obligatoires',
+                'status' => 'danger'
+            ];
+        }
+    }
+}
+
+/**
+ * function editing avatar
+ *
+ * @param integer $idUser
+ * @return void
+ */
+function editAvatar(int $idUser)
 {
     global $db;
     if (isset($_FILES['avatar']) && !empty($_FILES['avatar']['name'])) {
-        $maxSize = 2097152;
-        $acceptedExtends = ['jpg, png, jpeg'];
+        define('MAX_SIZE', 2097152);
+        define('MAX_WIDTH', 800);
+        define('MAX_HEIGHT', 809);
+        if (!empty($_FILES['avatar']['name'])) :
+            $tabExtentions = ['jpg', 'png', 'jpeg'];
+            if (UPLOAD_ERR_OK == ($_FILES['avatar']['error'])) :
+
+                $fileInfos = pathinfo($_FILES['avatar']['name']);
+
+                if (in_array(strtolower($fileInfos['extension']), $tabExtentions)) :
+                    $imageInfos = getimagesize($_FILES['avatar']['tmp_name']);
+                    if (($imageInfos[0] <= MAX_WIDTH) && ($imageInfos[1] <= MAX_HEIGHT)) :
+                        if ((filesize($_FILES['avatar']['tmp_name']) <= MAX_SIZE)) :
+                            $imageNom = $_FILES['avatar']['name'];
+                            $dossier = '../assets/avatar_' . $idUser . '/';
+                            if (is_dir($dossier)) {
+                                if (move_uploaded_file(($_FILES['avatar']['tmp_name']), $dossier . $imageNom)) :
+                                    $_SESSION['message'] = [
+                                        'label' => 'Avatar mis à jour.',
+                                        'status' => 'success'
+                                    ];
+                                    $sql     = "UPDATE users SET avatar='$imageNom' WHERE id='$idUser';";
+                                    $request = $db->prepare($sql);
+                                    $results = $request->execute();
+                                    return $results;
+                                else :
+                                    $_SESSION['message'] = [
+                                        'label' => 'Erreur lors de l\'upload.',
+                                        'status' => 'danger'
+                                    ];
+                                endif;
+                            } else {
+                                mkdir($dossier);
+                                if (move_uploaded_file(($_FILES['avatar']['tmp_name']), $dossier . $imageNom)) :
+                                    $_SESSION['message'] = [
+                                        'label' => 'Avatar mis à jour.',
+                                        'status' => 'success'
+                                    ];
+                                    $sql     = "UPDATE users SET avatar='$imageNom' WHERE id='$idUser';";
+                                    $request = $db->prepare($sql);
+                                    $results = $request->execute();
+                                    return $results;
+                                else :
+                                    $_SESSION['message'] = [
+                                        'label' => 'Erreur lors de l\'upload.',
+                                        'status' => 'danger'
+                                    ];
+                                endif;
+                            } else :
+                            $_SESSION['message'] = [
+                                'label' => 'Image trop lourde.',
+                                'status' => 'danger'
+                            ];
+                        endif;
+                    else :
+                        $_SESSION['message'] = [
+                            'label' => 'Image trop grande.',
+                            'status' => 'danger'
+                        ];
+                    endif;
+                else :
+                    $_SESSION['message'] = [
+                        'label' => 'Merci d\'insérer une image avec une extension valide.',
+                        'status' => 'danger'
+                    ];
+                endif;
+            else :
+                $_SESSION['message'] = [
+                    'label' => 'Erreur inconnu.',
+                    'status' => 'danger'
+                ];
+            endif;
+        endif;
     }
 }
 
 function editPassword(int $id)
 {
     global $db;
+    $validate = new Validate();
     if (isset($_POST['actualPassword']) && isset($_POST['newPassword']) && isset($_POST['confirmNewPassword'])) {
         if (!empty($_POST['actualPassword']) && !empty($_POST['newPassword']) && !empty($_POST['confirmNewPassword'])) {
             $checkPassword = password_verify($_POST['actualPassword'], $_SESSION['auth']['password']);
             if ($checkPassword) {
-                if ($_POST['newPassword'] == $_POST['confirmNewPassword']) {
+                if ($validate->validatePassword($_POST['newPassword']) && $_POST['newPassword'] == $_POST['confirmNewPassword']) {
                     $_SESSION['message'] = [
                         "label" => 'Votre mot de passe à bien été modifier.',
                         "status" => "success"
@@ -313,6 +461,8 @@ function deleteUser(int $id)
             $sql     = "DELETE FROM users WHERE id='$id';";
             $request = $db->prepare($sql);
             $request->execute();
+            session_destroy();
+            header('Location: accueil');
             $_SESSION['message'] = [
                 "label" => 'Votre compte a bien été supprimer',
                 "status" => "success"
@@ -322,3 +472,5 @@ function deleteUser(int $id)
         }
     }
 }
+
+// ! End Fonctions admin 

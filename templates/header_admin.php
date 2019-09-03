@@ -1,3 +1,7 @@
+<?php
+$idUser = $_SESSION['auth']['id'];
+$avatar = userAvatar($idUser);
+?>
 <!DOCTYPE html>
 <html lang="fr">
 
@@ -47,36 +51,42 @@
                 </li>
             </ul>
             <ul id="menu-connected">
-                        <img src="" alt="">
-                        <?= ucfirst($_SESSION['auth']['lastname']);  ?>
-                        <i class="fas fa-angle-down"></i>
-                    </a>
-                    <ul class="sub-menu">
-                        <li>
-                            <a href="parametres">
-                                <i class="fas fa-user-cog"></i>
-                                Paramètres
-                            </a>
-                        </li>
-                        <li>
-                            <a href="creer-tournoi">
-                                <i class="fas fa-plus-circle"></i>
-                                Créer un tournoi
-                            </a>
-                        </li>
-                        <li>
-                            <a href="mes-tournois">
-                                <i class="fas fa-chess"></i>
-                                Mes tournois
-                            </a>
-                        </li>
-                        <li>
-                            <a href="logout">
-                                <i class="fas fa-sign-out-alt"></i>
-                                Déconnexion
-                            </a>
-                        </li>
-                    </ul>
+                <!-- <div class="container-avatar"> -->
+                <?php if (!empty($avatar[0]['avatar'])) { ?>
+                    <img class="avatar" src="assets/avatar_<?= $_SESSION['auth']['id'] . '/' . $avatar[0]['avatar']; ?>" alt="<?= $avatar[0]['avatar']; ?>">
+                <?php } else { ?>
+                    <img class="avatar" src="assets/avatar_default/avatar.jpg" alt="avatar">
+                <?php } ?>
+                <!-- </div> -->
+                <?= ucfirst($_SESSION['auth']['lastname']);  ?>
+                <i class="fas fa-angle-down"></i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a href="parametres">
+                            <i class="fas fa-user-cog"></i>
+                            Paramètres
+                        </a>
+                    </li>
+                    <li>
+                        <a href="creer-tournoi">
+                            <i class="fas fa-plus-circle"></i>
+                            Créer un tournoi
+                        </a>
+                    </li>
+                    <li>
+                        <a href="mes-tournois">
+                            <i class="fas fa-chess"></i>
+                            Mes tournois
+                        </a>
+                    </li>
+                    <li>
+                        <a href="logout">
+                            <i class="fas fa-sign-out-alt"></i>
+                            Déconnexion
+                        </a>
+                    </li>
+                </ul>
                 </li>
             </ul>
         </nav>

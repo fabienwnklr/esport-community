@@ -228,6 +228,10 @@ img {
     position: relative;
     width: 17%;
     text-align: center; }
+    .main-menu #menu-connected .avatar {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%; }
     .main-menu #menu-connected:hover .sub-menu {
       display: block; }
     .main-menu #menu-connected i {
@@ -342,6 +346,10 @@ img {
       float: none;
       width: 100%;
       padding: 0 10px 0 10px; }
+      .main-menu #menu-connected .avatar,
+      .main-menu #menu-connect .avatar {
+        width: 60px;
+        height: 60px; }
       .main-menu #menu-connected:hover .sub-menu,
       .main-menu #menu-connect:hover .sub-menu {
         display: block; }
