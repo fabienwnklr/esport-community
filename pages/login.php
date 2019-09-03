@@ -1,8 +1,6 @@
 <?php require_once('../includes/functions.php'); ?>
 <?php
 
-// echo password_hash('password', PASSWORD_DEFAULT);
-
 /**
  * Login to web site
  *
@@ -26,10 +24,11 @@ function login($db)
         $_SESSION['auth'] = [
             'id'        => $result['id'],
             'firstname' => $result['firstname'],
-            'lastname'  => $result['lastname']
+            'lastname'  => $result['lastname'],
+            'password'  => $result['password'],
         ];
         $_SESSION['message'] = [
-            'label' => 'Bienvenue ' . ucfirst($_SESSION['auth']['firstname']) . '',
+            'label' => 'Bienvenue ' . ucfirst($_SESSION['auth']['lastname']) . '',
             'status' => 'success'
         ];
         header('Location: accueil');

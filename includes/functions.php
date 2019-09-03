@@ -171,7 +171,7 @@ function createTournament()
         'game'     => $_POST['game_selected'],
         'platform' => $platform,
         'date'     => $_POST['date'],
-        'heure' => $_POST['heure']
+        'heure' => $_POST['heure'],
     ];
 
     global $db;
@@ -186,7 +186,7 @@ function createTournament()
         ];
     } else {
         $_SESSION['message'] = [
-            'label'  => 'Votre tournoi n\'a pas été créer, veuillez contactez un administrateur.',
+            'label'  => 'Votre tournoi n\'a pas été créer, veuillez contactez un administrateur du site.',
             'status' => 'danger'
         ];
     }
@@ -232,24 +232,93 @@ function displayGameTournament(string $name)
  * @param integer $id
  * @return void
  */
-function deleteTournament(int $id) {
+function deleteTournament(int $id)
+{
     global $db;
     $sql     = "DELETE FROM tournaments WHERE id=$id;";
     $request = $db->prepare($sql);
-    $results = $request->execute();
-    return $results;
+    $request->execute();
 }
 
 /**
- * function for recup informations users
+ * function for recup user data
  *
  * @param integer $id
  * @return void
  */
-function userData(int $id){
+function userData(int $id)
+{
     global $db;
     $sql     = "SELECT * FROM users WHERE id='$id';";
     $request = $db->query($sql);
     $results = $request->fetchAll();
     return $results;
+}
+
+function editAvatar(int $id)
+{
+    global $db;
+    if (isset($_FILES['avatar']) && !empty($_FILES['avatar']['name'])) {
+        $maxSize = 2097152;
+        $acceptedExtends = ['jpg, png, jpeg'];
+    }
+}
+
+function editPassword(int $id)
+{
+    global $db;
+    if (isset($_POST['actualPassword']) && isset($_POST['newPassword']) && isset($_POST['confirmNewPassword'])) {
+        if (!empty($_POST['actualPassword']) && !empty($_POST['newPassword']) && !empty($_POST['confirmNewPassword'])) {
+            $checkPassword = password_verify($_POST['actualPassword'], $_SESSION['auth']['password']);
+            if ($checkPassword) {
+                if ($_POST['newPassword'] == $_POST['confirmNewPassword']) {
+                    $_SESSION['message'] = [
+                        "label" => 'Votre mot de passe à bien été modifier.',
+                        "status" => "success"
+                    ];
+                    $newPwd = password_hash($_POST['newPassword'], PASSWORD_DEFAULT);
+                    $sql     = "UPDATE users SET password='$newPwd' WHERE id='$id';";
+                    $request = $db->prepare($sql);
+                    $request->execute();
+                } else {
+                    $_SESSION['message'] = [
+                        "label" => 'Les nouveaux mots de passe ne sont pas identiques..',
+                        "status" => "danger"
+                    ];
+                }
+            } else {
+                $_SESSION['message'] = [
+                    "label" => 'Mot de passe actuel incorrect.',
+                    "status" => "danger"
+                ];
+            }
+        }
+    }
+}
+
+/**
+ * function for delete user account
+ *
+ * @param integer $id
+ * @return void
+ */
+function deleteUser(int $id)
+{
+    global $db;
+
+    if (isset($_POST['deleteAccount']) && !empty($_POST['deleteAccount'])) {
+        // Verif password
+        $checkPassword = password_verify($_POST['deleteAccount'], $_SESSION['auth']['password']);
+        if ($checkPassword) {
+            $sql     = "DELETE FROM users WHERE id='$id';";
+            $request = $db->prepare($sql);
+            $request->execute();
+            $_SESSION['message'] = [
+                "label" => 'Votre compte a bien été supprimer',
+                "status" => "success"
+            ];
+        } else {
+            echo 'Mot de passe incorrect';
+        }
+    }
 }

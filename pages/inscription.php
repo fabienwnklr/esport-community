@@ -73,7 +73,7 @@ echo flash();
         <small>* Indique les champs obligatoires.</small>
         <div class="custom-control text-center custom-checkbox">
             <input type="checkbox" class="custom-control-input" name="save-info" id="save-info" required>
-            <label class="custom-control-label align-middle" for="save-info">J'accepte les Conditions Général d'Utilisations</label>
+            <label class="custom-control-label align-middle" for="save-info">J'accepte les Conditions Général d'utilisations</label>
             <a href="cgu.php" class="badge badge-warning ml-4 text-uppercase p-4 align-middle">Voir les CGU</a>
             <a href="" class="badge badge-warning ml-2 text-uppercase p-4 align-middle">Voir la RGPD</a>
         </div>

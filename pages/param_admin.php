@@ -7,13 +7,14 @@
 
 <?php
 $idUser = $_SESSION['auth']['id'];
-checkForm();
-echo flash();
+
+deleteUser($idUser);
+editPassword($idUser);
 $dataUser = userData($idUser);
-debug($dataUser);
+echo flash();
 ?>
 
-<div class="container">
+<div class="container mt-5 mb-4">
     <ul class="nav nav-tabs" id="myTab" role="tablist">
         <li class="nav-item">
             <a class="nav-link active" id="infos-tab" data-toggle="tab" href="#infos" role="tab" aria-controls="infos" aria-selected="true">Informations</a>
@@ -28,39 +29,80 @@ debug($dataUser);
             <a class="nav-link" id="deleteAccount-tab" data-toggle="tab" href="#deleteAccount" role="tab" aria-controls="deleteAccount" aria-selected="false">Supprimer le compte</a>
         </li>
     </ul>
-    <div class="tab-content" id="myTabContent" style="height=60vh">
+    <div class="tab-content" id="myTabContent">
         <div class="tab-pane fade show active" id="infos" role="tabpanel" aria-labelledby="infos-tab">
-            <form class="mt-3 container">
+            <form for="infos" class="mt-3 container">
+                <h5>Mes informations</h5>
                 <div class="form-group">
                     <label for="name">Nom</label>
-                    <input type="text" class="form-control" id="name">
+                    <input type="text" class="form-control" id="name" value="<?= ucfirst($dataUser[0]['lastname']) ?>">
                 </div>
                 <div class="form-group">
                     <label for="firstname">Prénom</label>
-                    <input type="text" class="form-control" id="firstname">
+                    <input type="text" class="form-control" id="firstname" value="<?= ucfirst($dataUser[0]['firstname']) ?>">
                 </div>
                 <div class="form-group">
                     <label for="email">Email</label>
-                    <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                    <input type="email" class="form-control" id="email" value="<?= $dataUser[0]['email'] ?>">
                 </div>
                 <div class="form-group">
                     <label for="ville">Ville</label>
-                    <input type="ville" class="form-control" id="ville" aria-describedby="villeHelp">
+                    <input type="ville" class="form-control" id="ville">
                 </div>
                 <div class="form-group">
                     <label for="pays">Pays</label>
-                    <input type="pays" class="form-control" id="pays" aria-describedby="paysHelp">
+                    <input type="pays" class="form-control" id="pays">
                 </div>
+                <button type="submit" id="infos" class="btn btn-success">Valider modification(s)</button>
             </form>
         </div>
         <div class="tab-pane fade" id="avatar" role="tabpanel" aria-labelledby="avatar-tab">
-
+            <form for="editAvatar" method="post">
+                <div class="mt-4 mb-3">
+                    <h5>Ajouter/Modifier votre avatar</h5>
+                </div>
+                <div class="input-group">
+                    <div class="custom-file">
+                        <label class="custom-file-label" for="avatar">Choisir un fichier ...</label>
+                        <input type="file" class="custom-file-input" id="avatar" aria-describedby="avatar">
+                    </div>
+                    <div class="input-group-append">
+                        <button class="btn btn-primary" type="submit" id="editAvatar">Enregistrer</button>
+                    </div>
+                </div>
+            </form>
         </div>
         <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
-
+            <div class="mt-4 mb-3">
+                <h5>Changer votre mot de passe</h5>
+            </div>
+            <form for="editPassword" method="post">
+                <div>
+                    <label for="actualPassword">Mot de passe actuel</label>
+                    <input id="actualPassword" name="actualPassword" type="password" class="form-control">
+                </div>
+                <div>
+                    <label for="newPassword">Nouveau mot de passe</label>
+                    <input id="newPassword" name="newPassword" type="password" class="form-control">
+                </div>
+                <div>
+                    <label for="confirmNewPassword">Confirmer nouveau mot de passe</label>
+                    <input id="confirmNewPassword" name="confirmNewPassword" type="password" class="form-control">
+                </div>
+                <button id="editPassword" type="submit" class="mt-3 btn btn-success">Changer mot de passe</button>
+            </form>
         </div>
         <div class="tab-pane fade" id="deleteAccount" role="tabpanel" aria-labelledby="deleteAccount-tab">
-
+            <div class="mt-4 mb-3">
+                <h5>Suppression de compte</h5>
+            </div>
+            <form for="confirmDelete" method="post">
+                <div class="mb-3">
+                    <label for="deleteAccount">Votre mot de passe</label>
+                    <input id="deleteAccount" name="deleteAccount" type="password" class="form-control">
+                </div>
+                <button id="confirmDelete" type="submit" class="btn btn-danger">Supprimer votre compte</button>
+            </form>
         </div>
     </div>
 </div>

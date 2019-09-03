@@ -48,7 +48,7 @@
             </ul>
             <ul id="menu-connected">
                         <img src="" alt="">
-                        <?= ucfirst($_SESSION['auth']['firstname']);  ?>
+                        <?= ucfirst($_SESSION['auth']['lastname']);  ?>
                         <i class="fas fa-angle-down"></i>
                     </a>
                     <ul class="sub-menu">
