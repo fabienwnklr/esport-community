@@ -62,3 +62,8 @@ Mise en place htaccess pour edit le nom de la page dans l'url
 
 Edit de la page error 404
 Condition pour pas accéder a la page "créer un tournoi" si non connecter
+
+## Mardi 3 septembre ## 
+
+Ajout page paramètres admin, possibilité de modifier les infos, mot de passe, suppression du compte
+Ajout possible d'un avatar 

@@ -1,5 +1,5 @@
 <?php include('../includes/functions.php');
-$tournaments = displayTournament('name ASC');
+$tournaments = displayTournament();
 $platform = platformSelect();
 ?>
 <!-- Condition pour appeler le header adapter -->

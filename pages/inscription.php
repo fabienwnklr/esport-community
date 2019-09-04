@@ -1,10 +1,6 @@
 <?php
 require_once('../includes/functions.php');
-redirect();
 require('../templates/header.php');
-?>
-
-<?php
 checkForm();
 echo flash();
 ?>

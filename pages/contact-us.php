@@ -16,18 +16,18 @@
                     <form>
                         <div class="form-group">
                             <label for="name">Votre nom et prénom</label>
-                            <input type="text" class="form-control" id="name" aria-describedby="emailHelp" placeholder="Enter name" required>
+                            <input type="text" class="form-control" id="name" aria-describedby="emailHelp" required>
                         </div>
                         <div class="form-group">
                             <label for="email">Email</label>
-                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" placeholder="Enter email" required>
+                            <input type="email" class="form-control" id="email" aria-describedby="emailHelp" required>
                         </div>
                         <div class="form-group">
                             <label for="message">Message</label>
                             <textarea class="form-control" id="message" rows="6" required></textarea>
                         </div>
-                        <div class="mx-auto">
-                            <button type="submit" class="btn btn-primary text-right">Envoyer</button></div>
+                        <div class="mx-auto text-right">
+                            <button type="submit" class="btn btn-primary ">Envoyer</button></div>
                     </form>
                 </div>
             </div>
@@ -37,13 +37,11 @@
                 <div class="card-header bg-success text-white text-uppercase"><i class="fa fa-home"></i> Adresse</div>
                 <div class="card-body">
                     <p>3 rue des Champs Elysées</p>
-                    <p>64200 Biarritz</p>
+                    <p>75000 Paris</p>
                     <p>France</p>
-                    <p>Email : email@example.com</p>
+                    <p>Email : fabien.winkler@outlook.fr</p>
                     <p>Tel. 06 12 56 11 51 84</p>
-
                 </div>
-
             </div>
         </div>
     </div>

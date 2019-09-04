@@ -73,14 +73,6 @@ function flash($link = '', $text = '')
     endif;
 }
 
-function redirect()
-{
-    if (isset($_SESSION['redirect'])) :
-        header("refresh:3;url=login.php");
-    endif;
-    unset($_SESSION['redirect']);
-}
-
 /**
  * function checkForm for verif 
  * all input for inscription
@@ -96,7 +88,6 @@ function checkForm()
                 if ($_POST['password'] === $_POST['password-confirm']) :
                     if ($validate->email($_POST['email'])) :
                         inscription();
-                        $_SESSION['redirect'] = [];
                     else :
                         echo 'email non valide';
                     endif;
@@ -133,7 +124,7 @@ function inscription()
 
     if ($result) :
         $_SESSION['message'] = [
-            'label'  => 'Votre compte à bien été créer, vous allez être rediriger dans 3 secondes.',
+            'label'  => 'Votre compte à bien été créer.',
             'status' => 'success'
         ];
     endif;
@@ -148,11 +139,11 @@ function inscription()
  * @param boolean $nbElement { default is false }
  * @return void
  */
-function displayTournament($order = "id ASC", $nbElement = false)
+function displayTournament($nbElement = false)
 {
     global $db;
     $limit   = (is_int($nbElement)) ? 'LIMIT ' . $nbElement : '';
-    $sql     = "SELECT * FROM tournaments ORDER BY $order $limit";
+    $sql     = "SELECT * FROM tournaments ORDER BY date $limit";
     $request = $db->query($sql);
     $results = $request->fetchAll();
     return $results;
