@@ -21,13 +21,13 @@ if (isset($_SESSION['auth'])) {
 
             <?php $game = gameSelect('ASC'); ?>
             <?php $platform = platformSelect(); ?>
-            <select name="games" class="select-game">
-                <option value="">-- Jeu --</option>
+            <select id="gameSelected" name="games" class="select-game">
+                <option value="all-games">-- Jeu --</option>
                 <?php foreach ($game as $value) : ?>
-                    <option value="all-games"><?= $value['name'] ?></option>
+                    <option value="<?= $value['name'] ?>"><?= $value['name'] ?></option>
                 <?php endforeach; ?>
             </select>
-            <select name="platforms" id="select-platform">
+            <select name="platforms" id="platformSelected">
                 <option value="">-- Plateforme --</option>
                 <?php foreach ($platform as $value) : ?>
                     <option value=" <?= $value['name']; ?>">
@@ -35,7 +35,7 @@ if (isset($_SESSION['auth'])) {
                     </option>
                 <?php endforeach; ?>
             </select>
-            <input type="text" name="search-toornament" id="input-search" placeholder="Recherche ton tournoi" autocomplete="off">
+            <input type="text" name="search-toornament" id="nameTournament" placeholder="Recherche ton tournoi" autocomplete="off">
             <div class="validate">
                 <button type="submit">
                     <i class="fas fa-search"></i>

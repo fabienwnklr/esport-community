@@ -66,7 +66,7 @@
             <!-- RÉSUMER DU FORM -->
             <div class="summarize-container table-responsive mt-5">
                 <h2>Récapitulatif</h2>
-                <table id="table" class="table table-sm table-dark">
+                <table id="table" class="table table-bordered table-sm">
                     <tbody>
                         <tr>
                             <td>Nom du tournoi</td>
