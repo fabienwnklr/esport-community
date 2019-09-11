@@ -56,7 +56,7 @@ if (!empty($_POST)) :
         else :
             $_SESSION['message'] = [
                 'label' => 'Un des champs n\'est pas valide.',
-                'status' => 'error'
+                'status' => 'danger'
             ];
         endif;
     endif;

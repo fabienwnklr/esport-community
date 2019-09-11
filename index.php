@@ -64,4 +64,5 @@ if (isset($_SESSION['auth'])) {
     </section>
 </main>
 
+<script src="http://localhost/php/esport-community/assets/js/home.js"></script>
 <?php require_once('templates/footer.php'); ?>

@@ -24,6 +24,7 @@
 
     .menu-nav {
         display: inline-block;
+        margin-bottom: 0;
 
         li {
             margin-right: 30px;
@@ -242,8 +243,8 @@
             float: none;
             position: static;
             width: 100%;
-            // padding: 0 10px 0 10px;
             text-align: left;
+            margin-bottom: 0;
 
             .avatar {
                 display: none;
@@ -269,7 +270,7 @@
 
 
             li {
-                text-align: center;
+                // text-align: center;
                 display: block;
                 padding-right: 0;
                 border-bottom: 1px solid $default-color;

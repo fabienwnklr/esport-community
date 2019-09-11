@@ -8,11 +8,13 @@
   .container_tournois .tournoi {
     padding: 1rem;
     border-bottom: 1.5px solid #cac8ca; }
+    .container_tournois .tournoi:last-of-type {
+      border-bottom: none; }
     .container_tournois .tournoi:hover {
       background-color: #f1f1f1; }
     .container_tournois .tournoi a:hover {
       text-decoration: none; }
-    .container_tournois .tournoi .game_name {
+    .container_tournois .tournoi .tournament_name {
       margin-right: 5%;
       margin-left: 3%;
       font-size: 18px;
@@ -20,7 +22,7 @@
     .container_tournois .tournoi .details_tournoi,
     .container_tournois .tournoi p,
     .container_tournois .tournoi a,
-    .container_tournois .tournoi .game_name {
+    .container_tournois .tournoi .tournament_name {
       display: inline; }
     .container_tournois .tournoi p {
       font-size: 14px;

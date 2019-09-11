@@ -13,8 +13,12 @@
 
     .tournoi {
         padding: 1rem;
-        // border-radius: 25px;
         border-bottom: 1.5px solid $after-color;
+
+        &:last-of-type {
+            border-bottom: none;
+        }
+
         &:hover {
             background-color: $bg-color;
         }
@@ -24,20 +28,38 @@
                 text-decoration: none;
             }
         }
-        .game_name {
+
+        .tournament_name {
             margin-right: 5%;
             margin-left: 3%;
             @include fontSize(18px);
         }
+
         .details_tournoi,
         p,
         a,
-        .game_name {
+        .tournament_name {
             display: inline;
         }
+
         p {
             @include fontSize(14px);
         }
 
+    }
+}
+
+
+@media only screen and (max-width: 700px) {
+    .container_tournois {
+
+        .tournoi {
+            
+            .details_tournoi {
+                p {
+                   
+                }
+            }
+        }
     }
 }

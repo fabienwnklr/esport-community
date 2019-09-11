@@ -25,10 +25,10 @@ $platform = platformSelect();
             <a href="#">
                 <img src="http://localhost/php/esport-community/assets/img/icon-<?= $game; ?>.png" alt="<?= $key['game']; ?>">
                 <div class="details_tournoi">
-                    <h4 class="game_name"><?= $key['name']; ?></h3>
-                        <p><?= $key['game']; ?></p>
-                        <p>Date : <?= $date ?></p>
-                        <p>Heure du tournoi : <time><?= $heure; ?></time></p>
+                    <h4 class="tournament_name"><?= $key['name']; ?></h3>
+                        <p class="game_name"><?= $key['game']; ?></p>
+                        <p class="tournament_date">Date : <?= $date ?></p>
+                        <p class="tournament_heure">Heure du tournoi : <time><?= $heure; ?></time></p>
 
                 </div>
             </a>
