@@ -69,3 +69,4 @@ var slideMenu = function () {
 }
 
 window.addEventListener('load', slideMenu());
+window.onresize();

@@ -326,7 +326,7 @@ img {
     left: 0;
     top: 0;
     bottom: 0;
-    background-color: #cac29d;
+    background-color: #d3ccae;
     width: 250px;
     z-index: 1;
     transform: translateX(-250px); }
@@ -338,23 +338,27 @@ img {
       .main-menu .menu-nav li {
         margin-right: 0;
         display: block;
-        text-align: center;
         border-bottom: 1px solid #d3ccae; }
     .main-menu #menu-connected,
     .main-menu #menu-connect {
       display: block;
       float: none;
+      position: static;
       width: 100%;
-      padding: 0 10px 0 10px; }
+      text-align: left; }
       .main-menu #menu-connected .avatar,
       .main-menu #menu-connect .avatar {
-        width: 60px;
-        height: 60px; }
-      .main-menu #menu-connected:hover .sub-menu,
-      .main-menu #menu-connect:hover .sub-menu {
-        display: block; }
-        .main-menu #menu-connected:hover .sub-menu li,
-        .main-menu #menu-connect:hover .sub-menu li {
+        display: none; }
+      .main-menu #menu-connected i,
+      .main-menu #menu-connect i {
+        color: #a6985b; }
+      .main-menu #menu-connected .sub-menu,
+      .main-menu #menu-connect .sub-menu {
+        display: block;
+        margin-top: 8%;
+        background-color: #cac29d; }
+        .main-menu #menu-connected .sub-menu li,
+        .main-menu #menu-connect .sub-menu li {
           font-size: 16px;
           font-size: 1rem;
           text-align: left; }

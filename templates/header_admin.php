@@ -58,7 +58,11 @@ $avatar = userAvatar($idUser);
                     <img class="avatar" src="assets/avatar_default/avatar.jpg" alt="avatar">
                 <?php } ?>
                 <!-- </div> -->
-                <?= ucfirst($_SESSION['auth']['lastname']);  ?>
+                
+                    <a href="#">
+                        <?= ucfirst($_SESSION['auth']['lastname']);  ?>
+                    </a>
+                
                 <i class="fas fa-angle-down"></i>
                 </a>
                 <ul class="sub-menu">

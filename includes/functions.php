@@ -327,8 +327,8 @@ function editAvatar(int $idUser)
     global $db;
     if (isset($_FILES['avatar']) && !empty($_FILES['avatar']['name'])) {
         define('MAX_SIZE', 2097152);
-        define('MAX_WIDTH', 800);
-        define('MAX_HEIGHT', 809);
+        define('MAX_WIDTH', 1200);
+        define('MAX_HEIGHT', 1200);
         if (!empty($_FILES['avatar']['name'])) :
             $tabExtentions = ['jpg', 'png', 'jpeg'];
             if (UPLOAD_ERR_OK == ($_FILES['avatar']['error'])) :

@@ -7,7 +7,6 @@
         margin-top: 12px;
         float: left;
 
-        // width: 20%;
         svg {
             fill: #fff;
             transition: .3s ease fill;
@@ -22,9 +21,6 @@
 .main-menu {
     @include fontSize(22px);
     padding-top: 25px;
-    // display: inline-block;
-    // width: 78%;
-    // line-height: 74px;
 
     .menu-nav {
         display: inline-block;
@@ -218,7 +214,7 @@
         left: 0;
         top: 0;
         bottom: 0;
-        background-color: darken($default-color, 5);
+        background-color: $default-color;
         width: $menu-width;
         z-index: 1;
         transform: translateX($menu-width * -1);
@@ -235,7 +231,7 @@
             li {
                 margin-right: 0;
                 display: block;
-                text-align: center;
+                // text-align: center;
                 border-bottom: 1px solid $default-color;
             }
         }
@@ -244,25 +240,33 @@
         #menu-connect {
             display: block;
             float: none;
+            position: static;
             width: 100%;
-            padding: 0 10px 0 10px;
+            // padding: 0 10px 0 10px;
+            text-align: left;
 
             .avatar {
-                width: 60px;
-                height: 60px;;
+                display: none;
             }
 
-            &:hover {
-                .sub-menu {
-                    display: block;
+            i {
+                color: darken($default-color, 25)
+            }
 
-                    li {
-                        @include fontSize(16px);
-                        text-align: left;
-                    }
+
+            .sub-menu {
+                display: block;
+                margin-top: 8%;
+                background-color: darken($default-color, 5);
+
+                li {
+                    @include fontSize(16px);
+                    text-align: left;
+                    
                 }
-
             }
+
+
 
             li {
                 text-align: center;

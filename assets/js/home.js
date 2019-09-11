@@ -1,9 +1,10 @@
+var file = 'http://localhost/php/esport-community/xhr/xhr_home.php';
 
 // fonction qui fait appel a une requête ajax pour afficher 
 // les différents tournois d'un même jeux dans l'accueil
 var displayTournamentGame = function (game) {
     $.ajax({
-        url: 'http://localhost/php/esport-community/xhr/xhr_home.php',
+        url: file,
         method: 'POST',
         data: 'get=selectGame&name=' + game,
         success: function (result) {
@@ -24,7 +25,7 @@ var displayTournamentGame = function (game) {
 
                     content += "<div class='tournoi'>"
                     content += "<a href='#'>";
-                    content += "<img src='http://localhost/php/esport-community/assets/img/icon-" + nameForImg + ".png' alt=" + game + ">";
+                    content += "<img src='assets/img/icon-" + nameForImg + ".png' alt=" + game + ">";
                     content += "<div class='details_tournoi'>";
                     content += "<h4 class='game_name'>" + title + "</h3>";
                     content += "<p>" + game + "</p>";
@@ -69,7 +70,7 @@ var searchForm = function () {
     game.addEventListener('change', function () {
         if (this.value !== '' && typeof this.value != undefined) {
             $.ajax({
-                url: 'http://localhost/php/esport-community/xhr/xhr_home.php',
+                url: file,
                 method: 'POST',
                 data: 'get=selectGame&name=' + this.value,
                 success: function (result) {
@@ -90,7 +91,7 @@ var searchForm = function () {
 
                             content += "<div class='tournoi'>"
                             content += "<a href='#'>";
-                            content += "<img src='http://localhost/php/esport-community/assets/img/icon-" + nameForImg + ".png' alt=" + game + ">";
+                            content += "<img src='assets/img/icon-" + nameForImg + ".png' alt=" + game + ">";
                             content += "<div class='details_tournoi'>";
                             content += "<h4 class='game_name'>" + title + "</h3>";
                             content += "<p>" + game + "</p>";
