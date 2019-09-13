@@ -1,7 +1,7 @@
 var file = 'http://localhost/php/esport-community/xhr/xhr_home.php';
 
-// fonction qui fait appel a une requête ajax pour afficher 
-// les différents tournois d'un même jeux dans l'accueil
+// fonction qui fait appel à une requête ajax pour afficher 
+// les différents tournois d'un même jeu dans l'accueil
 var displayTournamentGame = function (game) {
     $.ajax({
         url: file,
@@ -21,13 +21,13 @@ var displayTournamentGame = function (game) {
                     var title = result[i].name;
                     var date = result[i].date;
                     var heure = result[i].heure
-                    var platform = result[i].platform
+                    // var platform = result[i].platform
 
                     content += "<div class='tournoi'>"
                     content += "<a href='#'>";
                     content += "<img src='assets/img/icon-" + nameForImg + ".png' alt=" + game + ">";
                     content += "<div class='details_tournoi'>";
-                    content += "<h4 class='game_name'>" + title + "</h3>";
+                    content += "<h4 class='tournament_name'>" + title + "</h3>";
                     content += "<p>" + game + "</p>";
                     content += "<p>Date : " + date + "</p>";
                     content += "<p>Heure du tournoi : <time>" + heure + "</time></p>";
@@ -93,7 +93,7 @@ var searchForm = function () {
                             content += "<a href='#'>";
                             content += "<img src='assets/img/icon-" + nameForImg + ".png' alt=" + game + ">";
                             content += "<div class='details_tournoi'>";
-                            content += "<h4 class='game_name'>" + title + "</h3>";
+                            content += "<h4 class='tournament_name'>" + title + "</h3>";
                             content += "<p>" + game + "</p>";
                             content += "<p>" + platform + "</p>";
                             content += "<p>Date : " + date + "</p>";

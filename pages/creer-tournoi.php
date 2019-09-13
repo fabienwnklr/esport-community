@@ -35,7 +35,7 @@
             <?php $game = gameSelect('ASC'); ?>
             <?php $platform = platformSelect(); ?>
             <label for="game_selected"></label>
-            <input type="search" id="inputToReturnValue" name="game_selected" class="input-game-selected" placeholder="Choisit ton jeu..." required>
+            <input type="search" id="inputToReturnValue" name="game_selected" class="input-game-selected" placeholder="Choisis ton jeu..." required>
 
             <!-- DEBUT CHECKBOX SELECT PLATFORM -->
             <div class="platforms-container">

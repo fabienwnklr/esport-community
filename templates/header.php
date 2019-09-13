@@ -40,8 +40,8 @@
                     </a>
                 </li>
                 <li class="contact-us">
-                    <a href="contact" title="Nous contactez">
-                        Nous contactez
+                    <a href="contact" title="Contact">
+                        Contact
                     </a>
                 </li>
             </ul>

@@ -105,7 +105,7 @@ function checkForm()
 
 /**
  * function inscription for valide 
- * insciption after verification
+ * inscription after verification
  * @return void
  */
 function inscription()

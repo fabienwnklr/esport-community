@@ -27,7 +27,6 @@ $avatar = userAvatar($idUser);
             <div class="burger">
                 <span></span>
             </div>
-
         </a>
         <a class="logo wrapper" href="accueil" title="Accueil">
             <?php require_once('logo.php'); ?>
@@ -45,19 +44,17 @@ $avatar = userAvatar($idUser);
                     </a>
                 </li>
                 <li class="contact-us">
-                    <a href="contact" title="Nous contactez">
-                        Nous contactez
+                    <a href="contact" title="Contact">
+                        Contact
                     </a>
                 </li>
             </ul>
             <ul id="menu-connected">
-                <!-- <div class="container-avatar"> -->
                 <?php if (!empty($avatar[0]['avatar'])) { ?>
                     <img class="avatar" src="assets/avatar_<?= $_SESSION['auth']['id'] . '/' . $avatar[0]['avatar']; ?>" alt="<?= $avatar[0]['avatar']; ?>">
                 <?php } else { ?>
                     <img class="avatar" src="assets/avatar_default/avatar.jpg" alt="avatar">
                 <?php } ?>
-                <!-- </div> -->
                 
                     <a href="#">
                         <?= ucfirst($_SESSION['auth']['lastname']);  ?>
