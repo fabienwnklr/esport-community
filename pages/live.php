@@ -5,14 +5,14 @@
     require_once('../templates/header.php'); 
 } ?>
 
-<div id="twitch-embed"></div>
+<div id="twitch-embed" style="height:600px"></div>
 
 <script src="https://embed.twitch.tv/embed/v1.js"></script>
 <script>
 new Twitch.Embed("twitch-embed", {
     width: "100%",
     height: 600,
-    channel: "live_201665475_RiHaFZBQWqoBJ8ieHIkJTMQqSivXsm",
+    channel: "gotaga",
     theme: "dark",
 });
 </script>

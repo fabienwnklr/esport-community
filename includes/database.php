@@ -13,7 +13,7 @@ try {
     if (DEBUG) {
         echo utf8_encode($e->getMessage());
     } else {
-        echo 'Erreur de connexion a la base de données.';
+        echo 'Erreur de connexion à la base de données.';
     }
     die();
 }
