@@ -121,6 +121,9 @@ var searchForm = function () {
                         $('#site-cache').before(content);
 
                     }
+                },
+                error: function(e) {
+                    console.error(e);
                 }
             });
         }

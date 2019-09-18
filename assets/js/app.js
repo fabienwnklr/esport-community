@@ -35,13 +35,12 @@
 // ? Refonte du jquery pour le menu slide en natif
 // ! Fonction pour gerer le menu slide
 
-// On déclare les variable dont on a besoin
-var windowWidth = document.documentElement.clientWidth;
-var body = document.getElementById('body');
-var menuBurger = document.getElementById('header-icon');
-var siteCache = document.getElementById('site-cache');
-
 var slideMenu = function () {
+    // Déclaration des variables.
+    var windowWidth = document.documentElement.clientWidth;
+    var body = document.getElementById('body');
+    var menuBurger = document.getElementById('header-icon');
+    var siteCache = document.getElementById('site-cache');
     // On écoute l'événement sur le burger au clique 
     menuBurger.addEventListener('click', function (event) {
         // preventdefault pour couper le comportement par default (simple précaution)
@@ -69,4 +68,3 @@ var slideMenu = function () {
 }
 
 window.addEventListener('load', slideMenu());
-window.onresize();

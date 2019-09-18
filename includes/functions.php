@@ -21,7 +21,7 @@ function debug($content)
     echo '</pre>';
 };
 /**
- * function for recup game (limit or not)
+ * function for recuperate game (limit or not)
  *
  * @param string $order
  * @param boolean $nbElement
@@ -39,7 +39,7 @@ function gameSelect(string $order = 'DESC', $nbElement = false)
     return $results;
 }
 /**
- * function for recup all platform
+ * function for recuperate all platform
  *
  * @return void
  */
@@ -239,7 +239,7 @@ function deleteTournament(int $id)
 }
 
 /**
- * function for recup user avatar
+ * function for recuperate user avatar
  *
  * @param integer $id
  * @return void
@@ -269,7 +269,7 @@ function removeAvatar(int $id)
 }
 
 /**
- * function for recup user data
+ * function for recuperate user data
  *
  * @param integer $id
  * @return void
@@ -299,7 +299,7 @@ function editUserInfos(int $id)
             $newEmail = $_POST['edit_email'];
 
             $_SESSION['message'] = [
-                'label' => 'Vos informations ont bien été modifier',
+                'label'  => 'Vos informations ont bien été modifier',
                 'status' => 'success'
             ];
 
@@ -309,7 +309,7 @@ function editUserInfos(int $id)
             return $results;
         } else {
             $_SESSION['message'] = [
-                'label' => 'Veuillez remplir les champs obligatoires',
+                'label'  => 'Veuillez remplir les champs obligatoires',
                 'status' => 'danger'
             ];
         }
@@ -340,11 +340,11 @@ function editAvatar(int $idUser)
                     if (($imageInfos[0] <= MAX_WIDTH) && ($imageInfos[1] <= MAX_HEIGHT)) :
                         if ((filesize($_FILES['avatar']['tmp_name']) <= MAX_SIZE)) :
                             $imageNom = $_FILES['avatar']['name'];
-                            $dossier = '../assets/avatar_' . $idUser . '/';
+                            $dossier  = '../assets/avatar_' . $idUser . '/';
                             if (is_dir($dossier)) {
                                 if (move_uploaded_file(($_FILES['avatar']['tmp_name']), $dossier . $imageNom)) :
                                     $_SESSION['message'] = [
-                                        'label' => 'Avatar mis à jour.',
+                                        'label'  => 'Avatar mis à jour.',
                                         'status' => 'success'
                                     ];
                                     $sql     = "UPDATE users SET avatar='$imageNom' WHERE id='$idUser';";

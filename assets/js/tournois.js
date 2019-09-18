@@ -4,8 +4,11 @@
 var inputToReturnValue = document.getElementById('inputToReturnValue');
 var previewGame = document.getElementById('preview_game');
 
-// * Fonction pour récuperer la valeur de l'élément cliquer
-// * (valeur du alt ici), pour l'entrée directement dans l'input
+/**
+ * Fonction pour récuperer la valeur de l'élément cliquer
+ * 
+ * @param e-event
+ */
 function returnSelectedGame(e) {
     inputToReturnValue.value = e.alt;
     previewGame.innerText = e.alt;
@@ -34,7 +37,7 @@ $('#heure').change(function () {
 
 /**
  * Partie suppression 
- * @param {int} id du tournoi a supprimer
+ * @param id-int du tournoi a supprimer
  */
 var deleteTournament = function (id) {
     if (confirm('Êtes vous sur de vouloir supprimer définitivement ce tournoi ?')) {
