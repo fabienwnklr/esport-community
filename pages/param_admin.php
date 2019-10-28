@@ -82,7 +82,7 @@ echo flash();
                         <button class="btn btn-primary" type="submit" id="editAvatar">Enregistrer</button>
                     </div>
                 </div>
-                <small>Taille maximum : 800 x 800</small>
+                <small>Taille maximum : 1200 x 1200</small>
             </form>
         </div>
         <div class="tab-pane fade" id="password" role="tabpanel" aria-labelledby="password-tab">
