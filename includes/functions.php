@@ -238,20 +238,6 @@ function deleteTournament(int $id)
     $request->execute();
 }
 
-/**
- * function for recuperate user avatar
- *
- * @param integer $id
- * @return void
- */
-function userAvatar(int $id)
-{
-    global $db;
-    $sql     = "SELECT avatar FROM users WHERE id='$id';";
-    $request = $db->query($sql);
-    $results = $request->fetchAll();
-    return $results;
-}
 
 /**
  * function for remove user avatar
