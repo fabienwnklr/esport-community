@@ -64,8 +64,8 @@
 </script>
 <script src="https://getbootstrap.com/docs/4.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-xrRywqdh3PHs8keKZN+8zzc5TX0GRTLCcmivcbNJWm2rs5C8PRhcEn3czEjhAO9o" crossorigin="anonymous"></script>
 <script src="https://getbootstrap.com/docs/4.3/examples/checkout/form-validation.js"></script>
-<script src="http://localhost/php/esport-community/assets/js/app.js"></script>
-<script src="http://localhost/php/esport-community/assets/js/tournois.js"></script>
+<script src="http://localhost/esport-community/assets/js/app.js"></script>
+<script src="http://localhost/esport-community/assets/js/tournois.js"></script>
 </body>
 
 

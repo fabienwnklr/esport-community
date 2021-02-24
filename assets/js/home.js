@@ -1,4 +1,4 @@
-var file = 'http://localhost/php/esport-community/xhr/xhr_home.php';
+var file = 'http://localhost/esport-community/xhr/xhr_home.php';
 
 // fonction qui fait appel à une requête ajax pour afficher 
 // les différents tournois d'un même jeu dans l'accueil

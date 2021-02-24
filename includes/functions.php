@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once('database.php');
-require_once($_SERVER['DOCUMENT_ROOT'] . '/php/esport-community/Class/Validate.php');
+require_once($_SERVER['DOCUMENT_ROOT'] . '/esport-community/Class/Validate.php');
 
 // ? Start init functions
 
@@ -25,7 +25,7 @@ function debug($content)
  *
  * @param string $order
  * @param boolean $nbElement
- * @return void
+ * @return array
  */
 function gameSelect(string $order = 'DESC', $nbElement = false)
 {
@@ -41,7 +41,7 @@ function gameSelect(string $order = 'DESC', $nbElement = false)
 /**
  * function for recuperate all platform
  *
- * @return void
+ * @return array
  */
 function platformSelect()
 {

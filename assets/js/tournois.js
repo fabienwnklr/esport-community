@@ -42,7 +42,7 @@ $('#heure').change(function () {
 var deleteTournament = function (id) {
     if (confirm('Êtes vous sur de vouloir supprimer définitivement ce tournoi ?')) {
         $.ajax({
-            url: 'http://localhost/php/esport-community/xhr/xhr_home.php',
+            url: 'http://localhost/esport-community/xhr/xhr_home.php',
             method: 'POST',
             data: 'get=removeTournament&id=' + id,
             success: function (r) {

@@ -1,6 +1,5 @@
 <?php
 $idUser = $_SESSION['auth']['id'];
-$avatar = userAvatar($idUser);
 ?>
 <!DOCTYPE html>
 <html lang="fr">
@@ -9,13 +8,13 @@ $avatar = userAvatar($idUser);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <link rel="stylesheet" href="http://localhost/php/esport-community/assets/css/main.css">
-    <link rel="stylesheet" href="http://localhost/php/esport-community/assets/css/tournois.css">
-    <link rel="stylesheet" href="http://localhost/php/esport-community/assets/css/tournois_admin.css">
-    <link rel="stylesheet" href="http://localhost/php/esport-community/assets/css/create.css">
-    <link rel="stylesheet" href="http://localhost/php/esport-community/assets/css/contact.css">
-    <link rel="stylesheet" href="http://localhost/php/esport-community/assets/css/footer.css">
-    <link rel="icon" href="http://localhost/php/esport-community/assets/avatar_default/avatar.jpg">
+    <link rel="stylesheet" href="http://localhost/esport-community/assets/css/main.css">
+    <link rel="stylesheet" href="http://localhost/esport-community/assets/css/tournois.css">
+    <link rel="stylesheet" href="http://localhost/esport-community/assets/css/tournois_admin.css">
+    <link rel="stylesheet" href="http://localhost/esport-community/assets/css/create.css">
+    <link rel="stylesheet" href="http://localhost/esport-community/assets/css/contact.css">
+    <link rel="stylesheet" href="http://localhost/esport-community/assets/css/footer.css">
+    <link rel="icon" href="http://localhost/esport-community/assets/avatar_default/avatar.jpg">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <title>e-Sport Community</title>
 </head>
